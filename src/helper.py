@@ -1,3 +1,4 @@
+
 import speech_recognition as sr
 import google.generativeai as genai
 from dotenv import load_dotenv
@@ -5,9 +6,6 @@ import os
 from gtts import gTTS
 
 print("perfect!!")
-
-
-#loading env variable to get the api key
 load_dotenv()
 
 GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
@@ -16,11 +14,11 @@ os.environ["GOOGLE_API_KEY"]=GOOGLE_API_KEY
 
 
 def voice_input():
-    r=sr.Recognizer()  #to recognize the voice
+    r=sr.Recognizer()
     
-    with sr.Microphone() as source:  #open microphone
+    with sr.Microphone() as source:
         print("listening...")
-        audio=r.listen(source)        #convert the audio into text
+        audio=r.listen(source)
     try:
         text=r.recognize_google(audio)
         print("you said: ", text)

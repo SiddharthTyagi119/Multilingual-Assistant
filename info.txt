@@ -1,0 +1,12 @@
+#text to text
+#converting the voice input to text and pass to the model .
+#and then we are generating the response in the form of mp3 
+#capturimg the voice input
+#passing text to the llm model 
+#voice input will be required, so we have to paas in the form of voice file
+#reading audio file
+
+#to recognize the voice
+#open microphone
+#convert the audio into text
+#save the speech from the given text in the mp3 format

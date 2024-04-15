@@ -1,7 +1,3 @@
-#text to text
-#converting the voice input to text and pass to the model .
-#and then we are generating the response in the form of mp3 
-
 import streamlit as st
 from src.helper import voice_input, llm_model_object, text_to_speech
 
@@ -11,13 +7,13 @@ def main():
     
     if st.button("Ask me anything"):
         with st.spinner("Listening..."):
-            text=voice_input()                 #capturimg the voice input 
-            response=llm_model_object(text)    #passing text to the llm model 
+            text=voice_input()
+            response=llm_model_object(text)
             text_to_speech(response)
             
-    #voice input will be required, so we have to paas in the form of voice file
+            
             audio_file=open("speech.mp3","rb")
-            audio_bytes=audio_file.read()   #reading audio file
+            audio_bytes=audio_file.read()
             
             
             st.text_area(label="Response:",value=response,height=350)
